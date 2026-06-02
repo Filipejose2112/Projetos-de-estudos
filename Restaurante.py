@@ -1,6 +1,6 @@
 
-# Simulação de um sistema de pedidos em um restaurante;
-# O programa apresenta um cardápio de comidas e bebidas, permite que o usuário faça pedidos, calcula o valor total e processa o pagamento;
+# Simulação de um sistema de pedidos em um restaurante.
+# O programa apresenta um cardápio de comidas e bebidas, permite que o usuário faça pedidos, calcula o valor total e processa o pagamento.
 # O programa também verifica o estoque dos itens e atualiza o estoque após cada pedido.
 
 cardapio_comida = {
