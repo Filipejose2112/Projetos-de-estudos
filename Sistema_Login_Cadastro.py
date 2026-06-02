@@ -1,7 +1,7 @@
 
-# Sistema de cadastro e de login, criado usando algumas das coisas que aprendi até esse momento
-# basicamente, aqui você vai se cadastrar e entrar numa 'espécie' de rede social,
-# com algumas opções de escolha, como abrir configuração, perfil e algumas escolhas dentro delas.
+# Sistema de cadastro e de login, criado usando algumas das coisas que aprendi até esse momento.
+# Basicamente, aqui você vai se cadastrar e entrar numa 'espécie' de rede social,
+# Com algumas opções de escolha, como abrir configuração, perfil e algumas escolhas dentro delas.
 
 usuarios_cadastrados = {}
 
