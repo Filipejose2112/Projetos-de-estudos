@@ -168,7 +168,7 @@ def menu_principal():
                             # para atualizar a senha do usuario no dicionário de usuários cadastrados
                             usuarios_cadastrados[usuario_logado] = nova_senha
                             print(
-                                f'Senha alterada com sucesso! Sua nova senha é: {nova_senha}')
+                                f'Senha alterada com sucesso!')
                             break
 
                 elif opcao_configuracoes == '2':
