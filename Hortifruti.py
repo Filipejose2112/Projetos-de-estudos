@@ -20,7 +20,7 @@ def mostrar_produtos():  # Função para mostrar os produtos do estoque.
         print(f'{produto.capitalize()}: R${preco:.2f}')
 
 
-def escolhendo_pro_carinho():  # funcão para adicionar produtos ao carrinho.
+def escolhendo_pro_carrinho():  # funcão para adicionar produtos ao carrinho.
 
     global carrinho
 
@@ -152,7 +152,7 @@ def pagamento_final():  # opçoes de pagamentos
 
 
 mostrar_produtos()
-escolhendo_pro_carinho()
+escolhendo_pro_carrinho()
 gerenciando_carrinho()
 mostrar_carrinho_atual()
 pagamento_final()
