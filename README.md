@@ -30,7 +30,19 @@ Bem-vindo ao meu repositório de aprendizado! Aqui eu centralizo os sistemas que
 
 ## 💻 Como Executar
 
-Escolha o arquivo que deseja testar e execute no seu terminal:
+Escolha o arquivo do projeto que deseja testar e execute o comando correspondente no seu terminal:
+
+💡 Nota: Certifique-se de ter o Python instalado na sua máquina e de estar com o terminal aberto na mesma pasta onde os arquivos foram baixados.
 
 ```bash
-python nomedoprojeto.py
+# Para testar o Sistema Bancário XYZ
+python Banco_XYZ.py
+
+# Para testar o Restaurante SHIRIAOSNAIAH
+python Restaurante.py
+
+# Para testar o Simulador de Hortifrúti
+python Hortifruti.py
+
+# Para testar a Rede Social / Cadastro
+python Sistema_Login_Cadastro.py
