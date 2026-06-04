@@ -1,7 +1,7 @@
 
-# Sistema de cadastro e de login, criado usando algumas das coisas que aprendi até esse momento.
-# Basicamente, aqui você vai se cadastrar e entrar numa 'espécie' de rede social,
-# Com algumas opções de escolha, como abrir configuração, perfil e algumas escolhas dentro delas.
+# Sistema de cadastro e de login, criado usando algumas das coisas que aprendi até esse momento
+# basicamente, aqui você vai se cadastrar e entrar numa 'espécie' de rede social,
+# com algumas opções de escolha, como abrir configuração, perfil e algumas escolhas dentro delas.
 
 usuarios_cadastrados = {}
 
@@ -27,64 +27,59 @@ print('Olá, seja bem-vindo ao site')
 print('Faça seu cadastro para acessar o site ou faça login se já tiver cadastro')
 
 
-def cadastro_login():  # função de cadastro e de login.
+def cadastro_login():  # função de cadastro e de login
 
     global escolhas_perfil, escolhas_configuracoes, escolhas, usuarios_cadastrados, usuario_logado
     while True:
         opcao = input('\nDigite 1 para cadastro ou 2 para login: ')
 
-        # Para fazer o cadastro, pois como você ainda não possue login o site vai apresentar erro na hora do login.
-
+        # Seção para fazer cadastro no site
         if opcao == '1':
             login_usuario = input(
                 'Digite um nome de usuário para se cadastrar: ') .strip()
-            if login_usuario == '':
+            if login_usuario == '':  # Caso o nome esteja vazio
                 print('Login não pode ser vazio. Tente novamente.')
-                continue  # Volta para o início do loop de cadastro.
+                continue
 
-            elif login_usuario in usuarios_cadastrados:
+            elif login_usuario in usuarios_cadastrados:  # Caso o nome já existe no sistema
                 print('Login já existe. Tente um login diferente.')
-                continue  # Volta para o início do loop de cadastro.
-            else:
+                continue
 
-                while True:
-                    senha_usuario = input(
-                        'Digite sua senha (mínimo 4 caracteres): ') .strip()
-                    if len(senha_usuario) < 4:
-                        print('Senha muito curta. Tente novamente.')
-                        # ficar insistindo até o usuário digitar uma senha válida.
-                        continue
+            while True:
+                senha_usuario = input(
+                    'Digite sua senha (mínimo 4 caracteres): ') .strip()
+                if len(senha_usuario) < 4:
+                    print('Senha muito curta. Tente novamente.')
+                    # ficar insistindo até o usuário digitar uma senha válida
+                    continue
 
-                    print('Senha válida!')
-                    usuarios_cadastrados[login_usuario] = senha_usuario
-                    print('Cadastro realizado com sucesso! Agora faça o login.')
-                    break
+                usuarios_cadastrados[login_usuario] = senha_usuario
+                print('Cadastro realizado com sucesso! Agora faça o login.')
+                break
 
-                # Para fazer login no site.
-
+        # Para fazer login no site
         elif opcao == '2':
             login_usuario = input('Digite seu login: ') .strip()
 
             if login_usuario == '':
                 print('Login não pode ser vazio. Tente novamente.')
-                continue  # Volta para o início do loop de login.
+                continue  # Volta para o início do loop de login
 
             senha_usuario = input('Digite sua senha: ') .strip()
 
-            if login_usuario in usuarios_cadastrados and usuarios_cadastrados[login_usuario]:
+            if login_usuario in usuarios_cadastrados and usuarios_cadastrados[login_usuario] == senha_usuario:
                 print("\n"+"="*50)
                 print('Login realizado com sucesso!')
                 print("olá senhor(a) " + login_usuario +
                       ", seja bem-vindo(a) ao site!")
                 print("\n"+"="*50)
                 usuario_logado = login_usuario
-
-                break  # Para sair do loop e ir para o menu principal.
+                break  # Agora o sistema entrará no menu principal
             else:
                 print('Login ou senha incorretos. Tente novamente.')
 
 
-# para acessar o menu principal, sendo configurações, perfil ou sair do site.
+# para acessar o menu principal, sendo configurações, perfil ou sair do site
 def menu_principal():
     while True:
         print('\n--- MENU PRINCIPAL ---')
@@ -95,10 +90,10 @@ def menu_principal():
 
         opcao_usuario = input('Digite o número da opção desejada: ')
 
-        # caso usuário queira acessar o perfil.
+        # caso usuário queira acessar o perfil
 
         if opcao_usuario == '1':
-            while True:  # Loop de perfil.
+            while True:  # Loop de perfil
 
                 print("\n"+"="*50)
                 print('\n--- PERFIL ---')
@@ -118,7 +113,7 @@ def menu_principal():
                         print(escolha)
                     opcao_informacoes = input('Escolha o que deseja ver: ')
                     if opcao_informacoes == '1':
-                        # Mostrar o nome do usuário logado caso ele queria ver o perfil.
+                        # Mostrar o nome do usuário logado caso ele queria ver o perfil
                         print(f'Exibindo nome...{usuario_logado}')
                     elif opcao_informacoes == '2':
                         print('Exibindo email...')
@@ -143,15 +138,15 @@ def menu_principal():
                         'Você criou sua conta recentemente e não tem muitas atividades.')
 
                 elif opcao_perfil == '4':
-                    # Sai do loop do perfil e volta para o menu principal.
+                    # Sai do loop do perfil e volta para o menu principal
                     break
                 else:
                     print('Opção inválida.')
 
-        # se quiser entrar nas configurações.
+        # se quiser entrar nas configurações
 
         elif opcao_usuario == '2':
-            while True:  # loop de configurações.
+            while True:  # loop de configurações
 
                 print("\n"+"="*50)
                 print('\n--- CONFIGURAÇÕES ---')
@@ -164,13 +159,13 @@ def menu_principal():
                 if opcao_configuracoes == '1':
 
                     while True:
-                        # caso usuário resolva criar uma nova senha, aqui ficará salvo a nova senha.
+                        # caso usuário resolva criar uma nova senha, aqui ficará salvo a nova senha
                         nova_senha = input('Digite sua nova senha: ')
                         if len(nova_senha) < 4:
                             print('Senha muito curta. Tente novamente.')
                             continue
                         else:
-                            # para atualizar a senha do usuario no dicionário de usuários cadastrados.
+                            # para atualizar a senha do usuario no dicionário de usuários cadastrados
                             usuarios_cadastrados[usuario_logado] = nova_senha
                             print(
                                 f'Senha alterada com sucesso! Sua nova senha é: {nova_senha}')
@@ -181,7 +176,7 @@ def menu_principal():
                 elif opcao_configuracoes == '3':
                     print('Configurando notificações...')
                 elif opcao_configuracoes == '4':
-                    # Sai do loop de configurações e volta para o menu principal.
+                    # Sai do loop de configurações e volta para o menu principal
                     break
                 else:
                     print('Opção inválida.')
@@ -192,11 +187,11 @@ def menu_principal():
             print("\n"+"="*50)
             print("Saindo do site. Até logo senhor(a) " + usuario_logado+"!")
             print("\n"+"="*50)
-            break  # para finalizar o programa e sair do loop principal.
+            break  # para finalizar o programa e sair do loop principal
         else:
             print('Opção inválida. Por favor, escolha uma opção válida.')
 
-# finalização.
+# finalização
 
 
 cadastro_login()
