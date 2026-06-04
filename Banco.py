@@ -131,7 +131,7 @@ def setor_financeiro(usuario):  # aqui onde ficará a parte de finanças
                     print('Por favor, digite um número válido.')
                     continue
                 continuar = input(
-                    "O senhor(a) deseja fazer outro saco? sim ou nao: ").lower().strip()
+                    "O senhor(a) deseja fazer outro saque? sim ou nao: ").lower().strip()
                 if continuar != 'sim':
                     break
 
